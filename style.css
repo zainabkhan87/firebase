@@ -53,3 +53,62 @@ h3{
 #google-btn:hover{
     background-color: rgb(2, 2, 129);
 }
+#option{
+    text-align: center;
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+}
+#name,#password{
+    display: flex;
+    flex-direction: row;
+}
+#email,#confirm{
+    display: flex;
+    flex-direction: row;
+}
+table{
+    margin-left: 500px;
+}
+#password{
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+#confirm{
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+#email{
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+#name{
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    margin-right: 20px;
+    border-radius: 5px;
+
+  &:hover
+    {box-shadow: 0 -1px 0 rgba(0, 0, 0, .04), 0 2px 4px rgba(0, 0, 0, .25);}
+  
+  &:active {
+    background-color: #eeeeee;
+  }
+  
+  &:focus {
+    outline: none;
+    box-shadow: 
+      0 -1px 0 rgba(0, 0, 0, .04),
+      0 2px 4px rgba(0, 0, 0, .25),
+      0 0 0 3px #c8dafc;
+  }
+  
+  &:disabled {
+    filter: grayscale(100%);
+    background-color: #ebebeb;
+    box-shadow: 0 -1px 0 rgba(0, 0, 0, .04), 0 1px 1px rgba(0, 0, 0, .25);
+    cursor: not-allowed;
+  }
+}  

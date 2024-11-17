@@ -10,13 +10,26 @@
  <div>
     <h1>Sign up</h1>
     <div>
+       <table>
         <form action="">
-            <p>User Name: <input type="text" id="name"></p>
-            <p>Email: <input type="email" id="email"></p>
-            <p>Password: <input type="text" id="password"></p>
-            <p> Confirm Password: <input type="text" id="confirm"></p>
+            <tr>
+            <td id="user"><label for="name"> User Name</label>
+            <input type="text" id="name"></td>
+           <td> <label for="password">Password</label>
+            <input type="text" id="password"></td>
+            </tr>
+            <tr>
+            <td><label for="email">Email</label>
+            <input type="email" id="email"></td>
+            <td><label for="confirm pass"> Confirm Password</label>
+            <input type="text" id="confirm"></td>
+            </tr>
         </form>
+      </table>
+        <br>
+        <br>
         <button type="submit" id="signup-btn">Sign up</button>
+        <p id="option">OR</p>
         <button type="submit" id="google-btn">Sign In With Google</button>
     </div>
 
