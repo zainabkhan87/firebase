@@ -1,6 +1,19 @@
-*{
-    background-color: bisque;
+body{
+    background:linear-gradient(135deg, #6a11cb, #2575fc,#00c9ff); 
+    background-attachment: fixed;
     font-family: 'Times New Roman', Times, serif;
+    animation: gradientAnimation 15s ease infinite;
+}
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 h1{
     text-align: center;
@@ -8,107 +21,52 @@ h1{
     text-decoration:underline;
     
 }
-h3{
-    color: rgb(2, 2, 129);
-    text-align: center;
-    font-size: 40px;
-    margin-top: 70px;
-}
-#start{
-    margin-left: 900px;
-    margin-top: 10px;
-    
-}
-#name{
-
-}
-
-#signup-btn{
-    display: block;            
-    margin: 0 auto;    
-    padding: 15px 30px;       
-    font-size: 18px;           
-    border: none;        
-    background-color:black; 
-    color: white;             
-    border-radius: 5px;    
-    cursor: pointer;
-}
-#signup-btn:hover{
+ #google-btn:hover,#signup-btn:hover,#login-btn:hover{
     background-color: rgb(2, 2, 129);
 }
-
-#google-btn{
-    display: block;            
-    margin: 0 auto;  
-    padding: 15px 30px;       
-    font-size: 18px;           
-    border: none;        
-    background-color:black; 
-    color: white;             
-    border-radius: 5px;    
-    cursor: pointer;
-  
-}
-#google-btn:hover{
-    background-color: rgb(2, 2, 129);
-}
-#option{
-    text-align: center;
+#card {
+    background-color:whitesmoke;
     color: black;
-    font-family: 'Times New Roman', Times, serif;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
-#name,#password{
-    display: flex;
-    flex-direction: row;
+.card-container{
+    margin-left: 350px;
+    margin-top: 100px;
 }
-#email,#confirm{
-    display: flex;
-    flex-direction: row;
+#email,#name{
+    display: flex; 
+    margin-bottom: 15px;
 }
-table{
-    margin-left: 500px;
+#city,#password{
+    display: inline-flex; 
+    margin-bottom: 25px;
 }
-#password{
-    padding-bottom: 5px;
-    margin-bottom: 10px;
-    border-radius: 5px;
+#signup-btn{
+    margin-bottom: 15px;
 }
-#confirm{
-    padding-bottom: 5px;
-    margin-bottom: 10px;
-    border-radius: 5px;
+#signup{
+  margin-left: 1100px;
+  margin-top: -50px;
 }
-#email{
-    padding-bottom: 5px;
-    margin-bottom: 10px;
-    border-radius: 5px;
+#login{
+  margin-top: -50px;
 }
-#name{
-    padding-bottom: 5px;
-    margin-bottom: 10px;
-    margin-right: 20px;
-    border-radius: 5px;
+#navbar{
+  height: 60px;
+}
+#welcome-card{
+  background-color:whitesmoke;
+  color: black;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+#container-2{
+  margin-left: 350px;
+  margin-top: 100px;
+}
 
-  &:hover
-    {box-shadow: 0 -1px 0 rgba(0, 0, 0, .04), 0 2px 4px rgba(0, 0, 0, .25);}
-  
-  &:active {
-    background-color: #eeeeee;
-  }
-  
-  &:focus {
-    outline: none;
-    box-shadow: 
-      0 -1px 0 rgba(0, 0, 0, .04),
-      0 2px 4px rgba(0, 0, 0, .25),
-      0 0 0 3px #c8dafc;
-  }
-  
-  &:disabled {
-    filter: grayscale(100%);
-    background-color: #ebebeb;
-    box-shadow: 0 -1px 0 rgba(0, 0, 0, .04), 0 1px 1px rgba(0, 0, 0, .25);
-    cursor: not-allowed;
-  }
-}  
