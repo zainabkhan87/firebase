@@ -1,6 +1,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, GoogleAuthProvider,
+  signInWithPopup  } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
 //import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-analytics.js";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword  } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
 
 // Firebase configuration
 const firebaseConfig = {
@@ -68,42 +69,66 @@ function signup() {
 document.getElementById('signup-btn').addEventListener('click', signup);
 
 
-  
-
-//sign in with email and password
+//sign in
 function signin() {
-  const email = document.getElementById('email').value; // Replace 'email' with your email input field ID
-  const password = document.getElementById('password').value; // Replace 'password' with your password input field ID
+  const email = document.getElementById('email').value;
+  const password = document.getElementById('password').value;
+  console.log(email, password)
+
+  // Check if both fields are filled
   if (email === '' || password === '') {
-    Swal.fire('Please fill out both fields.');
+    alert('Please fill out both email and password fields.');
     return;
   }
 
   signInWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
-    // Signed in
+    // Signed in 
     const user = userCredential.user;
     console.log('Signed in successfully: ', user)
     alert('Logged in...')
-    sessionStorage.setItem("user", user.email);
-    window.location.pathname = './quiz.html'
+    sessionStorage.setItem("user", user.accessToken);
+    window.location.pathname = './index.html'
     // ...
   })
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      console.error('Sign-In Error: ', error);
-      Swal.fire({
-        icon: 'error',
-        title: 'Sign-In Failed',
-        text: errorMessage,
-      });
-    });
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    console.log(error)
+  });
 }
 
-// Attach the event listener to the login button
-document.getElementById('login-btn').addEventListener('click', signin);
+document.getElementById('login-btn')?.addEventListener('click', signin);
 
+const provider = new GoogleAuthProvider();
+
+function signinWithGoogle() {
+  signInWithPopup(auth, provider)
+  .then((result) => {
+    // This gives you a Google Access Token. You can use it to access the Google API.
+    const credential = GoogleAuthProvider.credentialFromResult(result);
+    const token = credential.accessToken;
+    // The signed-in user info.
+    const user = result.user;
+    console.log(user)
+    window.location.pathname = 'quiz.html'
+    sessionStorage.setItem('user', token)
+    // IdP data available using getAdditionalUserInfo(result)
+    // ...
+  }).catch((error) => {
+    // Handle Errors here.
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // The email of the user's account used.
+    const email = error.customData.email;
+    // The AuthCredential type that was used.
+    const credential = GoogleAuthProvider.credentialFromError(error);
+    console.log(error)
+    // ...
+  });
+}
+
+document.getElementById('google-btn')?.addEventListener('click', signinWithGoogle);
 
 
 

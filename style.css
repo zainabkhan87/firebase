@@ -31,10 +31,11 @@ h1{
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
+    justify-items: center; 
 }
 .card-container{
-    margin-left: 350px;
-    margin-top: 100px;
+  justify-self: center;  
+  margin-top: 100px;
 }
 #email,#name{
     display: flex; 
@@ -46,13 +47,6 @@ h1{
 }
 #signup-btn{
     margin-bottom: 15px;
-}
-#signup{
-  margin-left: 1100px;
-  margin-top: -50px;
-}
-#login{
-  margin-top: -50px;
 }
 #navbar{
   height: 60px;
@@ -66,7 +60,7 @@ h1{
   text-align: center;
 }
 #container-2{
-  margin-left: 350px;
+  justify-self: center;
   margin-top: 100px;
 }
 

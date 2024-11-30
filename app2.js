@@ -146,38 +146,3 @@ function previousQuestion() {
         renderQues();
     }
 }
-
-// async function saveUserScore(email, score) {
-//     try {
-//         // Reference to the Firestore collection
-//         const scoresCollection = db.collection("scores");
-
-//         // Save the score with email as a unique identifier
-//         await scoresCollection.doc(email).set({
-//             email: email,
-//             score: score,
-//             timestamp: new Date(), // Optional: Add a timestamp for when the score was recorded
-//         });
-
-//         console.log("Score saved successfully!");
-//     } catch (error) {
-//         console.error("Error saving score:", error);
-//     }
-// }
-
-// Example usage after quiz completion
-// function calculateResult() {
-//     var score = document.getElementById("score");
-//     var percentage = ((result / questions.length) * 100).toFixed(2);
-
-//     if (percentage > 70) {
-//         score.innerHTML = "Congratulations! You passed the test.</br> You attempted " + result + " correct answers out of " + questions.length + " questions. </br> Your score is " + percentage + "%";
-//     } else {
-//         score.innerHTML = "Sorry! You failed the test.</br> You attempted " + result + " correct answers out of " + questions.length + " questions. </br> Your score is " + percentage + "%";
-//         score.style.color = "#dc3545";
-//     }
-
-//     // Save the score to Firestore
-//     const userEmail = "example@example.com"; // Replace with the logged-in user's email
-//     saveUserScore(userEmail, result);
-// }
